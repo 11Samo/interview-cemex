@@ -1,0 +1,42 @@
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+thead {
+  th {
+    padding: 1rem;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+    color: #4a5568;
+  }
+}
+
+tbody {
+  tr {
+    &:hover {
+      background-color: #f7fafc;
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      color: #2d3748;
+    }
+
+    span {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.max-width {
+  max-width: 2100px;
+}
+
+.mat-icon {
+  width: 50px;
+  height: 50px;
+}

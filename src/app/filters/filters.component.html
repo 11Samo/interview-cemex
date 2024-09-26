@@ -1,0 +1,89 @@
+<div class="ml-10 mr-10 my-10">
+  <form [formGroup]="filterForm">
+    <div class="grid grid-cols-16 gap-3 px-4 py-2 rounded-md shadow-xl">
+      <!-- Status Filter -->
+      <div
+        class="w-full col-span-12 sm:col-span-10 md:col-span-16 lg:col-span-16 xl:col-span-5 2xl:col-span-5"
+      >
+        <label class="block text-gray-700">Status:</label>
+        <div class="flex flex-wrap gap-4 lg:pt-5">
+          <mat-checkbox formControlName="statusPending">Pending</mat-checkbox>
+          <mat-checkbox formControlName="statusInProgress"
+            >In Progress</mat-checkbox
+          >
+          <mat-checkbox formControlName="statusCompleted"
+            >Completed</mat-checkbox
+          >
+        </div>
+      </div>
+
+      <!-- Product Line Filter -->
+      <div
+        class="col-span-6 sm:col-span-5 md:col-span-7 lg:col-span-7 xl:col-span-3 2xl:col-span-2"
+      >
+        <label class="block text-gray-700">Product Line:</label>
+        <mat-form-field class="w-full" appearance="fill">
+          <mat-select formControlName="productLine" panelClass="custom-select">
+            <mat-option value="">All Product Lines</mat-option>
+            <mat-option value="Ready-Mix">Ready-Mix</mat-option>
+            <mat-option value="Cement">Cement</mat-option>
+            <mat-option value="Aggregates">Aggregates</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- From Date -->
+      <div
+        class="w-full col-span-6 sm:col-span-5 md:col-span-7 lg:col-span-7 xl:col-span-3"
+      >
+        <label class="block text-gray-700">From:</label>
+        <mat-form-field class="w-full" appearance="fill">
+          <input
+            matInput
+            [matDatepicker]="startPicker"
+            placeholder="Choose start date"
+            formControlName="startDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="startPicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #startPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <!-- To Date -->
+      <div
+        class="w-full col-span-6 sm:col-span-5 md:col-span-7 lg:col-span-7 xl:col-span-3"
+      >
+        <label class="block text-gray-700">To:</label>
+        <mat-form-field class="w-full" appearance="fill">
+          <input
+            matInput
+            [matDatepicker]="endPicker"
+            placeholder="Choose end date"
+            formControlName="endDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="endPicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #endPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <!-- Order Number Filter -->
+      <div
+        class="w-full col-span-6 sm:col-span-5 md:col-span-7 lg:col-span-7 xl:col-span-3 2xl:col-span-3"
+      >
+        <label class="block text-gray-700">Order Number:</label>
+        <mat-form-field class="w-full" appearance="fill">
+          <input
+            matInput
+            formControlName="orderNumber"
+            placeholder="Search Order Number"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
